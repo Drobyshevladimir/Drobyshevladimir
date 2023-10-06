@@ -10,42 +10,44 @@ B=[]
 for i in range(N):
     A=[0 for j in range(M)]
     B.append(A)
+
+count=0
+i=0
+j=0
+j1=M
+i1=N
+i0=0
+j0=0
+
+while count != M*N:
+
+    for j in range(j0,j1):
+        count+=1
+        B[i][j]=count
+    i0+=1
+    if count != M*N:
+        for i in range(i0,i1):
+            count+=1
+            B[i][j]=count
+
+        j1=j1-1
+        
+        if count !=M*N:
+            for j in reversed( range (j0,j1)):
+
+                
+                
+                count+=1
+                B[i][j]=count
+            i1-=1
+            if count != M*N:
+                
+                for i in reversed(range (i0,i1)):
+
+                    count+=1
+                    B[i][j]=count
+                j0+=1
+for i in range(N):
+    for j in range(M):
+        B[i][j]=B[i][j]*(i+1)
 print(*B, sep = '\n')
-count = 0
-i,j = 0,0
-n1=N
-m1=M
-while count != N*M:
-    while i<n1:
-        B[i][j] = count
-        i+=1
-        count+=1
-   
-    i-=1
-    j+=1
-    while j<m1:
-        B[i][j] = count
-        j+=1
-        count+=1
-
-    j-=1
-    n1-=1
-    m1-=1
-    i-=1
-    while i>-1:
-        B[i][j] = count
-        i-=1
-        count+=1
-
-    i+=1
-    j-=1
-    while j>-1:
-        B[i][j] = count
-        j-=1
-        count+=1
-    
-    j+=1    
-    n1-=1
-    m1-=1
-    i+=1
-print(B)
