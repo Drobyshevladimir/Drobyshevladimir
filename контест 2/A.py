@@ -12,10 +12,9 @@ numdots=0
 for i in range(a):
     k1=int((dots[i].split(' '))[0])
     k2=int((dots[i].split(' '))[1])
-    
     if k1!=ocb:
         if k1<ocb:
-            for j in reversed( range (a//2,a)):
+            for j in reversed(range (a//2,a)):
                 k3=int((dots[j].split(' '))[0])
                 k4=int((dots[j].split(' '))[1])
                 if k2==k4 and (ocb-k1)==(k3-ocb):
